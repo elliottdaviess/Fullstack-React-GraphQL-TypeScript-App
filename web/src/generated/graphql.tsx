@@ -12,33 +12,10 @@ export type Scalars = {
   Float: number;
 };
 
-export type Query = {
-  __typename?: 'Query';
-  hello: Scalars['String'];
-  posts: Array<Post>;
-  post?: Maybe<Post>;
-  me?: Maybe<User>;
-};
-
-
-export type QueryPostArgs = {
-  id: Scalars['Float'];
-};
-
-export type Post = {
-  __typename?: 'Post';
-  id: Scalars['Float'];
-  createdAt: Scalars['String'];
-  updatedAt: Scalars['String'];
-  title: Scalars['String'];
-};
-
-export type User = {
-  __typename?: 'User';
-  id: Scalars['Float'];
-  createdAt: Scalars['String'];
-  updatedAt: Scalars['String'];
-  username: Scalars['String'];
+export type FieldError = {
+  __typename?: 'FieldError';
+  field: Scalars['String'];
+  message: Scalars['String'];
 };
 
 export type Mutation = {
@@ -76,16 +53,39 @@ export type MutationLoginArgs = {
   options: UsernamePasswordInput;
 };
 
+export type Post = {
+  __typename?: 'Post';
+  id: Scalars['Float'];
+  createdAt: Scalars['String'];
+  updatedAt: Scalars['String'];
+  title: Scalars['String'];
+};
+
+export type Query = {
+  __typename?: 'Query';
+  hello: Scalars['String'];
+  posts: Array<Post>;
+  post?: Maybe<Post>;
+  me?: Maybe<User>;
+};
+
+
+export type QueryPostArgs = {
+  id: Scalars['Float'];
+};
+
+export type User = {
+  __typename?: 'User';
+  id: Scalars['Float'];
+  createdAt: Scalars['String'];
+  updatedAt: Scalars['String'];
+  username: Scalars['String'];
+};
+
 export type UserResponse = {
   __typename?: 'UserResponse';
   errors?: Maybe<Array<FieldError>>;
   user?: Maybe<User>;
-};
-
-export type FieldError = {
-  __typename?: 'FieldError';
-  field: Scalars['String'];
-  message: Scalars['String'];
 };
 
 export type UsernamePasswordInput = {
